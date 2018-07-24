@@ -1,0 +1,40 @@
+@import '~@angular/material/theming';
+
+@mixin mwt-search-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  
+
+  mwt-search {
+    .search-input {
+      input {
+        color: mat-color($accent);
+        background-color: 'mat-color($background, card)';
+      }
+       
+      &.has-focus {
+        box-shadow: 0 0 15px 2px rgba(mat-color($accent), 0.4),
+          0 0 15px 2px rgba(mat-color($accent), 0.4),
+          0 0 15px 2px rgba(mat-color($accent), 0.4);
+      }
+      mat-progress-bar {
+        display: flex;
+        position: absolute;
+        height: 3px;
+      }  
+      input::placeholder {
+        color: mat-color($accent);
+      }
+      input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: mat-color($accent);
+      }
+
+      input:-ms-input-placeholder { /* Microsoft Edge */
+        color: mat-color($accent);
+      }  
+
+    }
+  }
+}

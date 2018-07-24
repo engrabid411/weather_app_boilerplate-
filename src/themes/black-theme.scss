@@ -1,0 +1,9 @@
+$mwt-black-primary: mat-palette($mat-grey, 700, 300, 900);
+$mwt-black-accent: mat-palette($mat-blue-grey, 400);
+$mwt-black-warn: mat-palette($mat-red, 500);
+
+$mwt-black-theme: mat-dark-theme(
+  $mwt-black-primary,
+  $mwt-black-accent,
+  $mwt-black-warn
+);

@@ -1,0 +1,22 @@
+<mat-card [formGroup]="searchform" class="search-input" [ngClass]="{ 'has-focus': hasFocus }">
+        <input 
+          (focus)="hasFocus = true" 
+          (blur)="hasFocus = false"
+          [placeholder]="placeholder"          
+          [matAutocomplete]="auto"
+          formControlName="searchField"
+        />
+        <mat-icon class="icon mat-24"
+        color="accent"
+        >
+          search
+        </mat-icon>
+        <mat-progress-bar mode="indeterminate" color="warn" *ngIf="loading"></mat-progress-bar>  
+  </mat-card>
+  <mat-autocomplete #auto="matAutocomplete" class="location-search-autocomplete">
+    <mat-option *ngFor="let location of result" [value]="location.properties.name">
+      <span>{{
+        location.properties.name+", "+  location.properties.state +", "+ location.properties.country
+      }}</span>
+    </mat-option>
+  </mat-autocomplete>

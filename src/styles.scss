@@ -1,0 +1,60 @@
+@import 'styles-variables';
+
+@import '../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+
+@import '../node_modules/font-awesome/scss/font-awesome';
+
+@import 'styles-reset';
+
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+@import 'themes/default-theme.scss';
+@import 'themes/light-theme.scss';
+@import 'themes/black-theme.scss';
+@import 'themes/nature-theme.scss';
+
+@import 'styles-reset.scss-theme';
+@import 'app/app.component.scss-theme';
+@import 'app/shared/big-input/big-input.component.scss-theme';
+@import 'app/static/about/about.component.scss-theme';
+@import 'app/forecasts/todos/todos.component.scss-theme';
+@import 'app/forecasts/stock-market/stock-market.component.scss-theme';
+@import 'app/forecasts/theming/parent/parent.component.scss-theme';
+@import 'app/forecasts/theming/child/child.component.scss-theme';
+@import 'app/forecasts/forecasts/forecasts.component.scss-theme';
+
+@import 'app/shared/search/search.component.scss-theme';
+
+@mixin custom-components-theme($theme) {
+  @include mwt-styles-reset-theme($theme);
+  @include mwt-app-component-theme($theme);
+  @include mwt-about-component-theme($theme);
+  @include mwt-big-input-component-theme($theme);
+  @include mwt-search-component-theme($theme);
+  @include mwt-todos-component-theme($theme);
+  @include mwt-stock-market-component-theme($theme);
+  @include mwt-parent-component-theme($theme);
+  @include mwt-child-component-theme($theme);
+  @include mwt-forecasts-component-theme($theme);
+}
+
+@include angular-material-theme($mwt-theme);
+@include custom-components-theme($mwt-theme);
+
+.light-theme {
+  @include angular-material-theme($mwt-light-theme);
+  @include custom-components-theme($mwt-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($mwt-black-theme);
+  @include custom-components-theme($mwt-black-theme);
+}
+
+.nature-theme {
+  @include angular-material-theme($mwt-nature-theme);
+  @include custom-components-theme($mwt-nature-theme);
+}

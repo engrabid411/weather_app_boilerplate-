@@ -1,0 +1,4 @@
+$mwt-primary: mat-palette($mat-light-blue, 900, 300, 900);
+$mwt-accent: mat-palette($mat-cyan, A700, 300, A700);
+$mwt-warn: mat-palette($mat-pink, 600);
+$mwt-theme: mat-light-theme($mwt-primary, $mwt-accent, $mwt-warn);
